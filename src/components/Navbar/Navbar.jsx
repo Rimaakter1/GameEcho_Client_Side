@@ -1,7 +1,21 @@
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import logo from '../../assets/logo1.png'
-const Navbar = () => {
+import { useContext } from 'react';
+import { authContext } from '../AuthProvider/AuthProvider';
+import { Tooltip } from 'react-tooltip'
 
+const Navbar = () => {
+    const navigate = useNavigate();
+    const { user, logout } = useContext(authContext);
+    console.log(user);
+
+
+const handleLogout=()=>{
+    logout()
+    .then(res=>{
+        navigate('/')
+    })
+}
 
     const links = <>
         <Link to="/">Home</Link>
@@ -45,10 +59,20 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-4">
-                    <Link className='btn' to="/login">Login</Link>
-                    <Link className='btn' to="/register">Register</Link>
+                    {
+                        user ? <>
+                            <img data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} className='w-9 rounded-full' src={user.photoURL} alt="" />
+                            <button onClick={handleLogout} className='btn'>Logout</button>
+                        </> : (
+                            <>
+                                <Link className='btn' to="/login">Login</Link>
+                                <Link className='btn' to="/register">Register</Link>
+                            </>
+                        )
+                    }
                 </div>
             </div>
+            <Tooltip id="my-tooltip" />
 
         </div>
     );
