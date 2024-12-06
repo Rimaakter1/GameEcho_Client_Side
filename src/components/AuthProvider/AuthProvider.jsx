@@ -10,18 +10,22 @@ const AuthProvider = ({ children }) => {
 
     const googleProvider = new GoogleAuthProvider()
     const handleGoogleLogin = () => {
+        setLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
 
     const handleRegister = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const handleLogin = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     };
 
     const logout = () => {
+        setLoading(true);
         signOut(auth);
     };
     const manageProfile = (name, photo) => {
@@ -46,6 +50,8 @@ const AuthProvider = ({ children }) => {
             console.log(currentUser)
             if (currentUser) {
                 setUser(currentUser)
+                setLoading(false);
+
             }
             else {
                 setUser(null)

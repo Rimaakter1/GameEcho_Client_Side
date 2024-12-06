@@ -8,6 +8,7 @@ import WatchList from "../pages/WatchList";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ReviewDetails from "../pages/ReviewDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -25,15 +26,21 @@ const router = createBrowserRouter([
             },
             {
                 path: "addReview",
-                element: <AddReview></AddReview>
+                element: <PrivateRoute>
+                    <AddReview></AddReview>
+                </PrivateRoute>
             },
             {
                 path: "myReviews",
-                element: <MyReviews></MyReviews>
+                element: <PrivateRoute>
+                    <MyReviews></MyReviews>
+                </PrivateRoute>
             },
             {
                 path: "myWatchlist",
-                element: <WatchList></WatchList>
+                element: <PrivateRoute>
+                    <WatchList></WatchList>
+                </PrivateRoute>
             },
             {
                 path: "login",
