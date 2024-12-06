@@ -19,7 +19,7 @@ const WatchList = () => {
             <h1>WatchList</h1>
             {
 
-                watchlistData.map(review => <ReviewsCard key={review._id} review={review}></ReviewsCard>)
+               watchlistData>0 && watchlistData.map(review => <ReviewsCard key={review._id} review={review}></ReviewsCard>)
             }
         </div>
     );
