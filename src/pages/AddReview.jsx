@@ -14,7 +14,12 @@ const AddReview = () => {
         const gameDescription = e.target.reviewDescription.value;
         const year = e.target.publishingYear.value;
         const genre = e.target.genre.value;
-        const newReview = { coverImage, gameDescription, year, genre, gameTitle, gameRating };
+        const reviewerName = user.displayName;
+        const reviewerEmail = user.email;
+
+        console.log(reviewerEmail, reviewerName);
+
+        const newReview = { coverImage, gameDescription, year, genre, gameTitle, gameRating, reviewerName, reviewerEmail };
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {

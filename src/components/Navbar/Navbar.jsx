@@ -19,10 +19,10 @@ const handleLogout=()=>{
 
     const links = <>
         <Link to="/">Home</Link>
-        <Link to="/all-reviews">All Reviews</Link>
-        <Link to="/add-review">Add Review</Link>
-        <Link to="/my-reviews">My Reviews</Link>
-        <Link to="/game-watchlist">Game WatchList</Link>
+        <Link to="/reviews">All Reviews</Link>
+        <Link to="/addReview">Add Review</Link>
+        <Link to="/myReviews">My Reviews</Link>
+        <Link to="/myWatchlist">Game WatchList</Link>
     </>
 
     return (
