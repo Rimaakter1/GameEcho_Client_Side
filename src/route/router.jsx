@@ -9,11 +9,14 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ReviewDetails from "../pages/ReviewDetails";
 import PrivateRoute from "./PrivateRoute";
+import UpdateReview from "../pages/UpdateReview";
+import Page404 from "../pages/Page404";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
+        errorElement: <Page404></Page404>,
         children: [
             {
                 path: "/",
@@ -53,9 +56,14 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path:"review/:id",
-                element:<ReviewDetails></ReviewDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`)
+                path: "review/:id",
+                element: <ReviewDetails></ReviewDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/review/${params.id}`)
+            },
+            {
+                path: "updateReview/:id",
+                element: <UpdateReview></UpdateReview>,
+                loader: ({ params }) => fetch(`http://localhost:5000/review/${params.id}`)
             }
 
 

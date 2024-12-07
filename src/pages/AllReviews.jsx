@@ -6,7 +6,6 @@ import banner from "../assets/reviewBanner.avif"
 const AllReviews = () => {
 
     const allReviews = useLoaderData();
-    console.log(allReviews);
 
     return (
         <div className="bg-cover bg-center object-cover"

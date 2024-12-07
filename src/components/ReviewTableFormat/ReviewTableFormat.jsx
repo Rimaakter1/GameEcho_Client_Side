@@ -1,27 +1,47 @@
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin6Fill } from "react-icons/ri";
+import { Link } from "react-router";
+import Swal from "sweetalert2";
 
 const ReviewTableFormat = ({ myReview, myReviews, setMyReviews }) => {
 
     const { _id, coverImage, gameDescription, gameRating, gameTitle, genre, year } = myReview;
 
 
-
     const handleDelete = _id => {
-        console.log(_id);
-        fetch(`http://localhost:5000/reviews/${_id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                const remainingReview = myReviews.filter(myReview => myReview._id !== _id);
-                setMyReviews(remainingReview);
-            })
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/review/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+
+                            const remainingReview = myReviews.filter(myReview => myReview._id !== _id);
+                            setMyReviews(remainingReview);
+
+                        }
+                    })
+
+            }
+        });
 
     }
-
-
-
 
     return (
 
@@ -50,8 +70,8 @@ const ReviewTableFormat = ({ myReview, myReviews, setMyReviews }) => {
                 <p>{genre}</p>
             </td>
             <th className="space-y-1">
-                <button className="btn bg-green-300">Update <FaEdit />
-                </button>
+                <Link to={`/updateReview/${_id}`} className="btn bg-green-300">Update <FaEdit />
+                </Link>
                 <button onClick={() => handleDelete(_id)} className="btn bg-red-500 text-white">Delete <RiDeleteBin6Fill />
                 </button>
             </th>
