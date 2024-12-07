@@ -17,10 +17,13 @@ const WatchList = () => {
     return (
         <div>
             <h1>WatchList</h1>
-            {
+            <div>
+                {
 
-               watchlistData>0 && watchlistData.map(review => <ReviewsCard key={review._id} review={review}></ReviewsCard>)
-            }
+                    watchlistData.length > 0 ? watchlistData.map(review => <ReviewsCard key={review._id} review={review}></ReviewsCard>) : <p>Watchlist is empty</p>
+
+                }
+            </div>
         </div>
     );
 };
