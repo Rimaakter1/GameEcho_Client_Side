@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
 import { authContext } from "../components/AuthProvider/AuthProvider";
 import ReviewTableFormat from "../components/ReviewTableFormat/ReviewTableFormat";
+import Banner from "../components/Banner/Banner";
+import banner from "../assets/myReviewBanner.jpg"
 
 const MyReviews = () => {
 
@@ -15,17 +16,19 @@ const MyReviews = () => {
     }, [])
 
     return (
-        <div>
-            <h1> My Reviews </h1>
-            <div className="overflow-x-auto">
+        <div className="bg-cover bg-center object-cover pb-24"
+            style={{ backgroundImage: `url(${banner})` }}>
+
+            <Banner title="My Reviews" description="View and manage all the reviews you’ve submitted. Your feedback matters, and here you can see your thoughts on the games you've experienced!"></Banner>
+            <div className="w-11/12 mx-auto bg-white rounded-xl bg-opacity-90">
                 <table className="table">
-                    {/* head */}
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
                             <th></th>
+                            <th>Game Title</th>
+                            <th>Game Description</th>
+                            <th>Genre</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -1,3 +1,5 @@
+import { FaEdit } from "react-icons/fa";
+import { RiDeleteBin6Fill } from "react-icons/ri";
 
 const ReviewTableFormat = ({ myReview, myReviews, setMyReviews }) => {
 
@@ -23,7 +25,7 @@ const ReviewTableFormat = ({ myReview, myReviews, setMyReviews }) => {
 
     return (
 
-        <tr>
+        <tr className="text-black">
             <td>
                 <div className="flex items-center gap-3">
                     <div className="avatar">
@@ -33,19 +35,25 @@ const ReviewTableFormat = ({ myReview, myReviews, setMyReviews }) => {
                                 alt={gameTitle} />
                         </div>
                     </div>
-                    <div>
-                        <div className="font-bold">{gameTitle}</div>
-                        <div className="text-sm opacity-50"></div>
-                    </div>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <div className="font-bold">{gameTitle}</div>
+                    <div className="text-sm opacity-50"></div>
                 </div>
             </td>
             <td>
                 <p>{gameDescription}</p>
             </td>
-            <td>Purple</td>
-            <th>
-                <button className="btn btn-ghost btn-xs">Update</button>
-                <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs">Delete</button>
+            <td>
+                <p>{genre}</p>
+            </td>
+            <th className="space-y-1">
+                <button className="btn bg-green-300">Update <FaEdit />
+                </button>
+                <button onClick={() => handleDelete(_id)} className="btn bg-red-500 text-white">Delete <RiDeleteBin6Fill />
+                </button>
             </th>
         </tr>
 

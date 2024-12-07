@@ -46,7 +46,7 @@ const AddReview = () => {
     };
 
     return (
-        <div className=" bg-cover bg-center z-0"
+        <div className=" bg-cover bg-center"
             style={{ backgroundImage: `url(${bannerImg})` }} >
             <Banner title="Share Your Game Review" description="Your opinions matter! Write a review and help others discover their next favorite game."></Banner>
             <div className="flex items-center justify-center pb-24">
