@@ -11,7 +11,7 @@ const AllReviews = () => {
             <h1> All Reviews</h1>
             <div className="grid grid-cols-3">
                 {
-                    allReviews.map(review => <ReviewsCard key={review._id} review={review}></ReviewsCard>)
+                    allReviews > 0 && allReviews.map(review => <ReviewsCard key={review._id} review={review}></ReviewsCard>)
                 }
             </div>
         </div>

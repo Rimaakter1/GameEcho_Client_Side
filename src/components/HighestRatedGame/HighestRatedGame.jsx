@@ -7,7 +7,7 @@ const HighestRatedGame = ({ topRatedReviews }) => {
             <h1>Highest Rated Game</h1>
             <div className="grid grid-cols-3 gap-5">
                 {
-                    topRatedReviews.map(review => <ReviewsCard key={review._id} review={review}></ReviewsCard>)
+                    topRatedReviews > 0 && topRatedReviews.map(review => <ReviewsCard key={review._id} review={review}></ReviewsCard>)
                 }
             </div>
         </div>

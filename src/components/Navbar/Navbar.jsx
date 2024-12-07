@@ -1,8 +1,8 @@
-import { Link, useNavigate } from 'react-router';
-import logo from '../../assets/logo1.png'
+import { Link, NavLink, useNavigate } from 'react-router';
+import logo from '../../assets/logo.png'
 import { useContext } from 'react';
 import { authContext } from '../AuthProvider/AuthProvider';
-import { Tooltip } from 'react-tooltip'
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -10,24 +10,34 @@ const Navbar = () => {
     console.log(user);
 
 
-const handleLogout=()=>{
-    logout()
-    .then(res=>{
-        navigate('/')
-    })
-}
+    const handleLogout = () => {
+        logout()
+            .then(res => {
+                navigate('/')
+            })
+    }
 
     const links = <>
-        <Link to="/">Home</Link>
-        <Link to="/reviews">All Reviews</Link>
-        <Link to="/addReview">Add Review</Link>
-        <Link to="/myReviews">My Reviews</Link>
-        <Link to="/myWatchlist">Game WatchList</Link>
+        <NavLink className={({ isActive }) =>
+            isActive ? "text-red-400 font-bold" : "text-[#FDFDFD]"
+        } to="/">Home</NavLink>
+        <NavLink className={({ isActive }) =>
+            isActive ? "text-red-400 font-bold" : "text-[#FDFDFD]"
+        } to="/reviews">All Reviews</NavLink>
+        <NavLink className={({ isActive }) =>
+            isActive ? "text-red-400 font-bold" : "text-[#FDFDFD]"
+        } to="/addReview">Add Review</NavLink>
+        <NavLink className={({ isActive }) =>
+            isActive ? "text-red-400 font-bold" : "text-[#FDFDFD]"
+        } to="/myReviews">My Reviews</NavLink>
+        <NavLink className={({ isActive }) =>
+            isActive ? "text-red-400 font-bold" : "text-[#FDFDFD]"
+        } to="/myWatchlist">Game WatchList</NavLink>
     </>
 
     return (
         <div>
-            <div className="navbar bg-[#262626]">
+            <div className="navbar bg-[#262626] py-4">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,33 +56,46 @@ const handleLogout=()=>{
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-[#FDFDFD]">
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow ">
                             {links}
                         </ul>
                     </div>
                     <img className='w-20' src={logo} alt="" />
-                    <a className="font-bold text-2xl text-[#FDFDFD]">GameEcho</a>
+                    <a className="font-bold text-2xl text-[#FDFDFD] font-Parkinsans">GameEcho</a>
                 </div>
                 <div className="navbar-center">
-                    <ul className="menu menu-horizontal px-1 text-[#FDFDFD] text-lg gap-3">
+                    <ul className="menu menu-horizontal px-1 text-[16px] gap-5 font-Parkinsans">
                         {links}
                     </ul>
                 </div>
                 <div className="navbar-end gap-4">
                     {
                         user ? <>
-                            <img data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} className='w-9 rounded-full' src={user.photoURL} alt="" />
-                            <button onClick={handleLogout} className='btn'>Logout</button>
+                            <div className='bg-white p-2 rounded-full'>
+                                <img data-tooltip-id="my-tooltip-1" className='w-6' src={user.photoURL} alt="" />
+                            </div>
+
+
+                            <button onClick={handleLogout} className='btn text-lg font-bold rounded-3xl px-8 py-2 border-none bg-gradient-to-r from-rose-300 via-purple-400  to-blue-300 text-white'>Logout</button>
                         </> : (
                             <>
-                                <Link className='btn' to="/login">Login</Link>
-                                <Link className='btn' to="/register">Register</Link>
+
+                                <NavLink className={({ isActive }) =>
+                                    isActive ? "bg-gradient-to-r from-rose-300 via-purple-400  to-blue-300 text-white font-bold btn rounded-3xl px-8 py-2 border-none text-lg" : "text-lg font-bold btn rounded-3xl px-8 py-2 border-none"} to="/login">Login</NavLink>
+                                <NavLink className={({ isActive }) =>
+                                    isActive ? "bg-gradient-to-r from-rose-300 via-purple-400  to-blue-300 text-white font-bold btn rounded-3xl px-8 py-2 border-none text-lg" : "text-lg font-bold btn rounded-3xl px-8 py-2 border-none"} to="/register">Register</NavLink>
                             </>
                         )
                     }
+
                 </div>
             </div>
-            <Tooltip id="my-tooltip" />
+            <ReactTooltip
+                id="my-tooltip-1"
+                place="Top"
+                content={user?.displayName}
+                style={{ backgroundColor: "#FFFFFF", color: "#222", padding: "10px", fontWeight: 800 }}
+            />
 
         </div>
     );
