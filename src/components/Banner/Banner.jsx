@@ -11,7 +11,7 @@ const Banner = () => {
                 <div className="relative w-full h-screen">
                     <img
                         src={slider1}
-                        className="w-full h-screen " />
+                        className="w-full h-screen object-cover" />
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black to-black opacity-70"></div>
                     <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
@@ -36,7 +36,7 @@ const Banner = () => {
                 <div className="relative w-full h-screen">
                     <img
                         src={slider2}
-                        className="w-full h-screen " />
+                        className="w-full h-screen object-cover" />
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black to-black opacity-70"></div>
                     <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
@@ -58,7 +58,7 @@ const Banner = () => {
                 <div className="relative w-full h-screen">
                     <img
                         src={slider3}
-                        className="w-full h-screen " />
+                        className="w-full h-screen object-cover" />
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black to-black opacity-70"></div>
                     <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
@@ -81,7 +81,7 @@ const Banner = () => {
                 <div className="relative w-full h-screen">
                     <img
                         src={slider4}
-                        className="w-full h-screen " />
+                        className="w-full h-screen object-cover" />
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black to-black opacity-70"></div>
                     <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
