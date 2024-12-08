@@ -52,10 +52,10 @@ const Login = () => {
                 <div className="absolute inset-0 bg-black opacity-70"></div>
             </div>
 
-            <div className="relative z-10 py-16 px-6">
-                <div className="w-6/12 bg-white bg-opacity-80 mx-auto mb-10 rounded-lg">
-                    <div className="text-center my-8">
-                        <h1 className="text-5xl font-bold pt-5">Login now!</h1>
+            <div className="relative z-10 py-16 px-1 lg:px-6">
+                <div className="w-full md:w-10/12 lg:w-6/12 bg-white bg-opacity-80 mx-auto mb-10 rounded-lg">
+                    <div className="text-center my-4 lg:my-8">
+                        <h1 className="text-4xl lg:text-5xl font-bold pt-5">Login now!</h1>
                     </div>
                     <div className="w-full shadow-2xl rounded-2xl">
                         <form onSubmit={handleSubmit} className="card-body">

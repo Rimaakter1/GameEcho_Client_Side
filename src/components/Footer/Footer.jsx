@@ -5,7 +5,7 @@ import { IoLogoYoutube } from 'react-icons/io';
 const Footer = () => {
     return (
         <footer className='bg-[#131925]'>
-            <div className="flex  justify-around text-white py-10 gap-10">
+            <div className="flex flex-col lg:flex-row  justify-around text-white py-10 px-8 lg:px-0 gap-10">
                 <aside className='space-y-5'>
                     <img className='w-28' src={logo} alt="" />
                     <p className='text-lg font-Parkinsans'>

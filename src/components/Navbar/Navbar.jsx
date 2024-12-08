@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 import logo from '../../assets/logo.png'
 import { useContext } from 'react';
 import { authContext } from '../AuthProvider/AuthProvider';
@@ -6,6 +6,7 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 
 const Navbar = () => {
     const navigate = useNavigate();
+
     const { user, logout } = useContext(authContext);
     console.log(user);
 
@@ -19,25 +20,27 @@ const Navbar = () => {
 
     const links = <>
         <NavLink className={({ isActive }) =>
-            isActive ? "text-red-400 font-bold" : "text-[#FDFDFD]"
+            isActive ? "text-red-400 font-bold" : "dark:text-white"
         } to="/">Home</NavLink>
         <NavLink className={({ isActive }) =>
-            isActive ? "text-red-400 font-bold" : "text-[#FDFDFD]"
+            isActive ? "text-red-400 font-bold" : "dark:text-white"
         } to="/reviews">All Reviews</NavLink>
         <NavLink className={({ isActive }) =>
-            isActive ? "text-red-400 font-bold" : "text-[#FDFDFD]"
+            isActive ? "text-red-400 font-bold" : "dark:text-white"
         } to="/addReview">Add Review</NavLink>
         <NavLink className={({ isActive }) =>
-            isActive ? "text-red-400 font-bold" : "text-[#FDFDFD]"
+            isActive ? "text-red-400 font-bold" : "dark:text-white"
         } to="/myReviews">My Reviews</NavLink>
         <NavLink className={({ isActive }) =>
-            isActive ? "text-red-400 font-bold" : "text-[#FDFDFD]"
+            isActive ? "text-red-400 font-bold" : "dark:text-white"
         } to="/myWatchlist">Game WatchList</NavLink>
     </>
 
+
+
     return (
         <div>
-            <div className="navbar bg-[#262626] py-4">
+            <div className="navbar bg-[#020817] py-4">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -61,9 +64,9 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <img className='w-20' src={logo} alt="" />
-                    <a className="font-bold text-2xl text-[#FDFDFD] font-Parkinsans">GameEcho</a>
+                    <a className="font-bold text-2xl text-white font-Parkinsans">GameEcho</a>
                 </div>
-                <div className="navbar-center">
+                <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-[16px] gap-5 font-Parkinsans">
                         {links}
                     </ul>
@@ -81,14 +84,15 @@ const Navbar = () => {
                             <>
 
                                 <NavLink className={({ isActive }) =>
-                                    isActive ? "bg-gradient-to-r from-rose-300 via-purple-400  to-blue-300 text-white font-bold btn rounded-3xl px-8 py-2 border-none text-lg" : "text-lg font-bold btn rounded-3xl px-8 py-2 border-none"} to="/login">Login</NavLink>
+                                    isActive ? "bg-gradient-to-r from-rose-300 via-purple-400  to-blue-300 text-white font-bold btn rounded-3xl px-8 py-2 border-none text-lg" : "text-lg font-bold btn rounded-3xl px-8 py-2 border-none bg-white text-black"} to="/login">Login</NavLink>
                                 <NavLink className={({ isActive }) =>
-                                    isActive ? "bg-gradient-to-r from-rose-300 via-purple-400  to-blue-300 text-white font-bold btn rounded-3xl px-8 py-2 border-none text-lg" : "text-lg font-bold btn rounded-3xl px-8 py-2 border-none"} to="/register">Register</NavLink>
+                                    isActive ? "bg-gradient-to-r from-rose-300 via-purple-400  to-blue-300 text-white font-bold btn rounded-3xl px-8 py-2 border-none text-lg" : "text-lg font-bold btn rounded-3xl px-8 py-2 border-none bg-white text-black"} to="/register">Register</NavLink>
                             </>
                         )
                     }
 
                 </div>
+
             </div>
             <ReactTooltip
                 id="my-tooltip-1"

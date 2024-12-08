@@ -3,15 +3,15 @@ import newsletterImg from '../../assets/newsletter.avif';
 const Newsletter = () => {
     return (
         <div className="relative bg-cover bg-center object-cover py-16 px-6" style={{ backgroundImage: `url(${newsletterImg})` }}>
-            
+
             <div className="absolute inset-0 flex">
                 <div className="w-1/2 bg-black bg-opacity-85"></div>
 
                 <div className="w-1/2 bg-black bg-opacity-80"></div>
             </div>
 
-            <div className="relative w-full sm:w-10/12 md:w-8/12 lg:w-6/12 text-center bg-black bg-opacity-50 rounded-3xl p-6 sm:p-10 md:p-12 lg:p-20 mx-auto">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-white font-Parkinsans">
+            <div className="relative w-full md:w-8/12 lg:w-6/12 text-center bg-black bg-opacity-50 rounded-3xl p-6 sm:p-10 md:p-12 lg:p-20 mx-auto">
+                <h2 className="text-2xl md:text-4xl font-bold mb-6 text-white font-Parkinsans">
                     Stay Updated with the Latest Reviews!
                 </h2>
                 <p className="text-lg mb-8 text-white">

@@ -9,6 +9,7 @@ const MyReviews = () => {
     const [myReviews, setMyReviews] = useState([]);
     const { user } = useContext(authContext);
 
+
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?reviewerEmail=${user.email}`)
             .then(res => res.json())
@@ -20,6 +21,7 @@ const MyReviews = () => {
             style={{ backgroundImage: `url(${banner})` }}>
 
             <Banner title="My Reviews" description="View and manage all the reviews you’ve submitted. Your feedback matters, and here you can see your thoughts on the games you've experienced!"></Banner>
+
             <div className="w-11/12 mx-auto bg-white rounded-xl bg-opacity-90">
                 <table className="table">
                     <thead>

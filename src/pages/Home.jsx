@@ -8,7 +8,7 @@ const Home = () => {
     const topRatedReviews = useLoaderData();
     console.log(topRatedReviews);
     return (
-        <div>
+        <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
             <HomeBanner></HomeBanner>
             <AboutUs></AboutUs>
             <HighestRatedGame topRatedReviews={topRatedReviews}></HighestRatedGame>
