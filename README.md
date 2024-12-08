@@ -1,7 +1,7 @@
 
 # GameEcho: A Game Review Application (Client Repository)
 
-**Live Site URL:** [Insert Live URL here]
+**Live Site URL:** https://gameecho-ca02a.web.app/
 
 ### Description:
 GameEcho is a user-friendly platform designed to enhance the gaming community by providing a space to explore, review, and share opinions on games. With its clean and responsive interface, it ensures a Continuous experience across devices, making it easy for users to manage reviews and build a personalized watchlist.
