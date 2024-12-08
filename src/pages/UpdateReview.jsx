@@ -173,7 +173,7 @@ const UpdateReview = () => {
                         type="submit"
                         className="w-full bg-gradient-to-r from-rose-300 via-purple-400  to-blue-300 text-white py-2 px-4 rounded-md text-lg font-bold"
                     >
-                        Submit Review
+                        Update Review
                     </button>
                 </form>
             </div>

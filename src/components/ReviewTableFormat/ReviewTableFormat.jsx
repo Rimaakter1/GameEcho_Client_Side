@@ -2,9 +2,10 @@ import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import PropTypes from 'prop-types';
 
 const ReviewTableFormat = ({ myReview, myReviews, setMyReviews }) => {
-    const { _id, coverImage, gameDescription, gameRating, gameTitle, genre, year } = myReview;
+    const { _id, coverImage, gameDescription, gameTitle, genre } = myReview;
 
     const handleDelete = (_id) => {
         Swal.fire({
@@ -76,5 +77,12 @@ const ReviewTableFormat = ({ myReview, myReviews, setMyReviews }) => {
         </tr>
     );
 };
+
+ReviewTableFormat.propTypes = {
+    myReview: PropTypes.object.isRequired,
+    myReviews: PropTypes.array.isRequired,
+    setMyReviews: PropTypes.func.isRequired,
+}
+
 
 export default ReviewTableFormat;

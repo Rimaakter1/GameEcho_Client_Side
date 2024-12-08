@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../components/AuthProvider/AuthProvider";
-import registerImg from '../assets/loginReg.jpg'; // Ensure you have this image in the assets
+import registerImg from '../assets/loginReg.jpg';
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 
@@ -48,16 +48,13 @@ const Register = () => {
 
     return (
         <div className="relative">
-            {/* Background Image */}
             <div
                 className="absolute inset-0 bg-cover bg-center z-0"
                 style={{ backgroundImage: `url(${registerImg})` }}
             >
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-black opacity-50"></div>
             </div>
 
-            {/* Content */}
             <div className="relative z-10 py-16 px-1 lg:px-6">
                 <div className="w-full md:w-10/12 lg:w-6/12 mx-auto bg-white bg-opacity-80 rounded-lg shadow-2xl p-8">
                     <div className="text-center my-4 lg:my-8">

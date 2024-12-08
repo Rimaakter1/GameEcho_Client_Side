@@ -3,15 +3,12 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { useEffect, useState } from "react";
-import ThemeToggle from "../components/ThemeToggle";
 
 
 const MainLayout = () => {
 
     return (
         <div>
-            {/* <ThemeToggle></ThemeToggle> */}
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>

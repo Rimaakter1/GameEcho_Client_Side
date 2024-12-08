@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../components/AuthProvider/AuthProvider";
 import loginImg from '../assets/loginReg.jpg';

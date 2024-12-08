@@ -3,14 +3,13 @@ import slider1 from '../../assets/slider-1.avif';
 import slider2 from '../../assets/slider-2.jpg';
 import slider3 from '../../assets/slider-3.jpg';
 import slider4 from '../../assets/slider-4.jpg';
+import { Link } from 'react-router';
 
 
 const HomeBanner = () => {
 
 
-    const handleDone = () => {
-        console.log(`Done after 5 loops!`)
-    }
+
 
     return (
         <div className="carousel w-full">
@@ -34,7 +33,6 @@ const HomeBanner = () => {
                                     typeSpeed={70}
                                     deleteSpeed={50}
                                     delaySpeed={1000}
-                                    onLoopDone={handleDone}
                                 />
                             </span>
 
@@ -45,7 +43,7 @@ const HomeBanner = () => {
                             insights. Explore the latest titles, uncover hidden gems, and relive
                             the classics.
                         </p>
-                        <button className='btn px-9 py-2 text-lg font-semibold font-Parkinsans mt-6'> Explore Reviews</button>
+                        <Link to="/reviews" className='btn px-9 py-2 text-lg font-semibold font-Parkinsans mt-6'> Explore Reviews</Link>
                     </div>
                 </div>
 
@@ -68,7 +66,7 @@ const HomeBanner = () => {
                         <p className="mt-4 text-lg md:text-xl max-w-52 md:max-w-2xl text-white">
                             Celebrate creativity and groundbreaking gameplay in our featured reviews.
                         </p>
-                        <button className='btn px-9 py-2 text-lg font-semibold font-Parkinsans mt-6'> Explore Reviews</button>
+                        <Link to="/reviews" className='btn px-9 py-2 text-lg font-semibold font-Parkinsans mt-6'> Explore Reviews</Link>
                     </div>
                 </div>
                 <div className="absolute left-1 right-1 md:left-5 md:right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -91,7 +89,7 @@ const HomeBanner = () => {
                             Stay ahead with in-depth reviews on strategy, combat, and gameplay mechanics.
 
                         </p>
-                        <button className='btn px-9 py-2 text-lg font-semibold font-Parkinsans mt-6'> Explore Reviews</button>
+                        <Link to="/reviews" className='btn px-9 py-2 text-lg font-semibold font-Parkinsans mt-6'> Explore Reviews</Link>
                     </div>
                 </div>
                 <div className="absolute left-1 right-1 md:left-5 md:right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -113,7 +111,7 @@ const HomeBanner = () => {
                         <p className="mt-4 text-lg md:text-xl max-w-52 md:max-w-2xl text-white">
                             Dive into captivating stories, breathtaking graphics, and gameplay that redefines adventure. Read our expert reviews and uncover the best games.
                         </p>
-                        <button className='btn px-9 py-2 text-lg font-semibold font-Parkinsans mt-6'> Explore Reviews</button>
+                        <Link to="/reviews" className='btn px-9 py-2 text-lg font-semibold font-Parkinsans mt-6'> Explore Reviews</Link>
                     </div>
                 </div>
                 <div className="absolute left-1 right-1 md:left-5 md:right-5 top-1/2 flex -translate-y-1/2 transform justify-between">

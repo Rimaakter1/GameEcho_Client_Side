@@ -1,5 +1,6 @@
 import ReviewsCard from "../ReviewsCard/ReviewsCard";
 import { Fade } from "react-awesome-reveal";
+import PropTypes from 'prop-types';
 
 const HighestRatedGame = ({ topRatedReviews }) => {
     return (
@@ -15,6 +16,10 @@ const HighestRatedGame = ({ topRatedReviews }) => {
             </div>
         </div>
     );
+};
+
+HighestRatedGame.propTypes = {
+    topRatedReviews: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default HighestRatedGame;

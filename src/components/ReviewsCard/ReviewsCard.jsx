@@ -1,5 +1,6 @@
 import { Rating } from "@smastrom/react-rating";
 import { Link } from "react-router";
+import PropTypes from 'prop-types';
 
 const ReviewsCard = ({ review }) => {
 
@@ -31,5 +32,10 @@ const ReviewsCard = ({ review }) => {
 
     );
 };
+
+ReviewsCard.propTypes = {
+    review: PropTypes.object.isRequired,
+}
+
 
 export default ReviewsCard;

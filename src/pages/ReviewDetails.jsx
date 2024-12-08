@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData} from "react-router-dom";
 import { authContext } from "../components/AuthProvider/AuthProvider";
 import Banner from "../components/Banner/Banner";
 import reviewDetailsBanner from "../assets/reviewDetailsBanner.jpg"
@@ -11,7 +11,7 @@ const ReviewDetails = () => {
 
     const { user } = useContext(authContext);
     const review = useLoaderData();
-    const { _id, coverImage, gameDescription, gameRating, gameTitle, genre, year, reviewerName, reviewerEmail } = review;
+    const { coverImage, gameDescription, gameRating, gameTitle, genre, reviewerName, reviewerEmail } = review;
 
 
     const handleWatchList = () => {

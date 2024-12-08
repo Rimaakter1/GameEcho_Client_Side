@@ -6,12 +6,14 @@ import banner from "../assets/myReviewBanner.jpg";
 
 const MyReviews = () => {
     const [myReviews, setMyReviews] = useState([]);
-    const { user } = useContext(authContext);
+    const { user, loading, setLoading } = useContext(authContext);
 
     useEffect(() => {
         fetch(`https://game-echo-server.vercel.app/reviews?reviewerEmail=${user.email}`)
             .then((res) => res.json())
-            .then((data) => setMyReviews(data));
+            .then((data) => {
+                setMyReviews(data);
+            });
     }, [user.email]);
 
     return (

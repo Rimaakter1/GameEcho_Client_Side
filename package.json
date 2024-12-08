@@ -14,6 +14,7 @@
     "@smastrom/react-rating": "^1.5.0",
     "dotenv": "^16.4.7",
     "firebase": "^11.0.2",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-awesome-reveal": "^4.2.14",
     "react-awesome-slider": "^4.1.0",
