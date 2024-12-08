@@ -3,7 +3,7 @@ import Banner from "../components/Banner/Banner";
 import { authContext } from "../components/AuthProvider/AuthProvider";
 import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
-import banner from "../assets/dark-hexagon-gaming-abstract-vector-background-with-colored-bright-flashes_156943-1522.avif"
+import banner from "../assets/updateReview.avif"
 const UpdateReview = () => {
 
 

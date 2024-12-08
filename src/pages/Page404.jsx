@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import banner from "../assets/Free-download-Batman-Who-Laughs-Image.jpg"
+import banner from "../assets/errorPage.jpg"
 const Page404 = () => {
 
     const navigate = useNavigate();
