@@ -8,9 +8,6 @@ import { Link } from 'react-router';
 
 const HomeBanner = () => {
 
-
-
-
     return (
         <div className="carousel w-full">
             <div id="slide1" className="carousel-item relative w-full">
@@ -24,7 +21,6 @@ const HomeBanner = () => {
                         <h1 className="text-4xl md:text-6xl font-bold  text-white font-Parkinsans">
                             Epic {' '}
                             <span style={{ color: 'red', fontWeight: 'bold' }}>
-                                {/* Style will be inherited from the parent element */}
                                 <Typewriter
                                     words={['Gameplay', 'Adventure', 'Storyline', 'Visuals']}
                                     loop={5}

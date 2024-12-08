@@ -19,8 +19,8 @@ const UpdateReview = () => {
         const gameDescription = e.target.reviewDescription.value;
         const year = e.target.publishingYear.value;
         const genre = e.target.genre.value;
-        const reviewerName = user.displayName;
-        const reviewerEmail = user.email;
+        const reviewerName = user?.displayName;
+        const reviewerEmail = user?.email;
 
 
         const updatedReview = { coverImage, gameDescription, year, genre, gameTitle, gameRating, reviewerName, reviewerEmail };
@@ -41,9 +41,10 @@ const UpdateReview = () => {
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     });
-                    e.target.reset();
+
                 }
             })
+
 
     }
     return (
@@ -62,7 +63,7 @@ const UpdateReview = () => {
                             <label className="block text-white font-medium">User Email</label>
                             <input
                                 type="email"
-                                value={user.email}
+                                value={user?.email}
                                 className="w-full px-4 py-2 border rounded-md bg-gray-100 cursor-not-allowed"
                                 readOnly
                             />
@@ -71,7 +72,7 @@ const UpdateReview = () => {
                             <label className="block text-white font-medium">User Name</label>
                             <input
                                 type="text"
-                                value={user.displayName}
+                                value={user?.displayName}
                                 className="w-full px-4 py-2 border rounded-md bg-gray-100 cursor-not-allowed"
                                 readOnly
                             />

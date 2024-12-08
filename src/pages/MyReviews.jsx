@@ -3,16 +3,24 @@ import { authContext } from "../components/AuthProvider/AuthProvider";
 import ReviewTableFormat from "../components/ReviewTableFormat/ReviewTableFormat";
 import Banner from "../components/Banner/Banner";
 import banner from "../assets/myReviewBanner.jpg";
+import Loading from "../components/Loading/Loading";
 
 const MyReviews = () => {
     const [myReviews, setMyReviews] = useState([]);
-    const { user, loading, setLoading } = useContext(authContext);
+    const { user } = useContext(authContext);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`https://game-echo-server.vercel.app/reviews?reviewerEmail=${user.email}`)
+        setLoading(true); 
+        fetch(`https://game-echo-server.vercel.app/reviews?reviewerEmail=${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 setMyReviews(data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error("Error fetching reviews:", error);
+                setLoading(false);
             });
     }, [user.email]);
 
@@ -27,7 +35,11 @@ const MyReviews = () => {
             ></Banner>
 
             <div className="w-11/12 mx-auto bg-white bg-opacity-70 rounded-xl p-4">
-                {myReviews.length > 0 ? (
+                {loading ? (
+                    <div className="flex justify-center items-center py-8">
+                        <Loading />
+                    </div>
+                ) : myReviews.length > 0 ? (
                     <div className="overflow-x-auto">
                         <table className="table-auto w-full text-left">
                             <thead className="bg-gray-800 bg-opacity-60 text-white">

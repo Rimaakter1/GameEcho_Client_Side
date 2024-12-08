@@ -10,7 +10,7 @@ const Newsletter = () => {
                 <div className="w-1/2 bg-black bg-opacity-80"></div>
             </div>
 
-            <div className="relative w-full md:w-8/12 lg:w-6/12 text-center bg-black bg-opacity-50 rounded-3xl p-6 sm:p-10 md:p-12 lg:p-20 mx-auto">
+            <div className="relative w-full md:w-8/12 lg:w-6/12 text-center bg-black bg-opacity-50 rounded-3xl p-10 md:p-12 lg:p-20 mx-auto">
                 <h2 className="text-2xl md:text-4xl font-bold mb-6 text-white font-Parkinsans">
                     Stay Updated with the Latest Reviews!
                 </h2>

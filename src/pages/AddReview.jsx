@@ -62,7 +62,7 @@ const AddReview = () => {
                             <label className="block text-white font-medium">User Email</label>
                             <input
                                 type="email"
-                                value={user.email}
+                                value={user?.email}
                                 className="w-full px-4 py-2 border rounded-md bg-gray-100 cursor-not-allowed"
                                 readOnly
                             />
@@ -71,7 +71,7 @@ const AddReview = () => {
                             <label className="block text-white font-medium">User Name</label>
                             <input
                                 type="text"
-                                value={user.displayName}
+                                value={user?.displayName}
                                 className="w-full px-4 py-2 border rounded-md bg-gray-100 cursor-not-allowed"
                                 readOnly
                             />
