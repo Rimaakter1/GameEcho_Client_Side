@@ -2,47 +2,59 @@ import { useContext, useEffect, useState } from "react";
 import { authContext } from "../components/AuthProvider/AuthProvider";
 import ReviewTableFormat from "../components/ReviewTableFormat/ReviewTableFormat";
 import Banner from "../components/Banner/Banner";
-import banner from "../assets/myReviewBanner.jpg"
+import banner from "../assets/myReviewBanner.jpg";
 
 const MyReviews = () => {
-
     const [myReviews, setMyReviews] = useState([]);
     const { user } = useContext(authContext);
 
-
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?reviewerEmail=${user.email}`)
-            .then(res => res.json())
-            .then(data => setMyReviews(data))
-    }, [])
+            .then((res) => res.json())
+            .then((data) => setMyReviews(data));
+    }, [user.email]);
 
     return (
-        <div className="bg-cover bg-center object-cover pb-24"
-            style={{ backgroundImage: `url(${banner})` }}>
+        <div
+            className="bg-cover bg-center object-cover pb-24"
+            style={{ backgroundImage: `url(${banner})` }}
+        >
+            <Banner
+                title="My Reviews"
+                description="View and manage all the reviews you’ve submitted. Your feedback matters, and here you can see your thoughts on the games you've experienced!"
+            ></Banner>
 
-            <Banner title="My Reviews" description="View and manage all the reviews you’ve submitted. Your feedback matters, and here you can see your thoughts on the games you've experienced!"></Banner>
-
-            <div className="w-11/12 mx-auto bg-white rounded-xl bg-opacity-90">
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Game Title</th>
-                            <th>Game Description</th>
-                            <th>Genre</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        {
-                            myReviews.length > 0 && myReviews.map(myReview => <ReviewTableFormat key={myReview._id} myReview={myReview} myReviews={myReviews} setMyReviews={setMyReviews}></ReviewTableFormat>)
-                        }
-                    </tbody>
-
-                </table>
+            <div className="w-11/12 mx-auto bg-white bg-opacity-70 rounded-xl p-4">
+                {myReviews.length > 0 ? (
+                    <div className="overflow-x-auto">
+                        <table className="table-auto w-full text-left">
+                            <thead className="bg-gray-800 bg-opacity-60 text-white">
+                                <tr>
+                                    <th className="px-5 py-2"></th>
+                                    <th className="px-4 py-2">Game Title</th>
+                                    <th className="px-4 py-2">Game Description</th>
+                                    <th className="px-4 py-2">Genre</th>
+                                    <th className="px-12 py-3">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {myReviews.map((myReview) => (
+                                    <ReviewTableFormat
+                                        key={myReview._id}
+                                        myReview={myReview}
+                                        myReviews={myReviews}
+                                        setMyReviews={setMyReviews}
+                                    ></ReviewTableFormat>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                ) : (
+                    <p className="text-center text-gray-700 py-8">
+                        You haven’t submitted any reviews yet. Start sharing your thoughts on games!
+                    </p>
+                )}
             </div>
-
         </div>
     );
 };

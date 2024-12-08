@@ -51,14 +51,14 @@ const AddReview = () => {
             <Banner title="Share Your Game Review" description="Your opinions matter! Write a review and help others discover their next favorite game."></Banner>
             <div className="flex items-center justify-center pb-24">
                 <form
-                    className="bg-black p-6 rounded-lg shadow-md w-8/12 mx-auto bg-opacity-30"
+                    className="bg-black p-6 rounded-lg shadow-md w-full lg:w-8/12 mx-auto bg-opacity-30"
                     onSubmit={handleSubmit}
                 >
                     <h2 className="text-2xl font-bold mb-4 text-white">
                         Game Review Submission
                     </h2>
 
-                    <div className="grid grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                         <div className="form-group mb-4">
                             <label className="block text-white font-medium">User Email</label>
                             <input
