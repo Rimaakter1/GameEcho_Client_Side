@@ -17,17 +17,14 @@ const Register = () => {
         const password = e.target.password.value;
 
         if (password.length < 6) {
-            console.log(6);
             toast.error("Password must contain at least 6 characters")
             return;
         }
         if (!/[A-Z]/.test(password)) {
-            console.log('cap');
             toast.error("Password must contain at least one uppercase letter")
             return;
         }
         if (!/[a-z]/.test(password)) {
-            console.log('low');
             toast.error("Password must contain at least one lowercase letter")
             return;
         }

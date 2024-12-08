@@ -20,10 +20,9 @@ const AddReview = () => {
         const reviewerName = user.displayName;
         const reviewerEmail = user.email;
 
-        console.log(reviewerEmail, reviewerName);
 
         const newReview = { coverImage, gameDescription, year, genre, gameTitle, gameRating, reviewerName, reviewerEmail };
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://game-echo-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

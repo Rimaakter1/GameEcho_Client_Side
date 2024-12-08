@@ -25,7 +25,7 @@ const UpdateReview = () => {
 
         const updatedReview = { coverImage, gameDescription, year, genre, gameTitle, gameRating, reviewerName, reviewerEmail };
 
-        fetch(`http://localhost:5000/review/${_id}`, {
+        fetch(`https://game-echo-server.vercel.app/review/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -34,9 +34,7 @@ const UpdateReview = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.modifiedCount) {
-                    console.log('successfully updated');
                     Swal.fire({
                         title: 'Success!',
                         text: 'Review updated successfully',

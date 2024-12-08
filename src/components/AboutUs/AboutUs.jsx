@@ -3,7 +3,7 @@ import { Slide } from "react-awesome-reveal";
 
 const AboutUs = () => {
     return (
-        <div className="bg-gray-900 text-white py-8 md:py-10 lg:py-16 px-6">
+        <div className="dark:bg-gray-900 dark:text-white py-8 md:py-10 lg:py-16 px-6">
             <div className="max-w-screen-xl mx-auto lg:flex items-center justify-between">
                 <div className="lg:w-1/2 pr-0 lg:pr-8">
                     <Slide direction="left">

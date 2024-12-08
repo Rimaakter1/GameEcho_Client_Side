@@ -8,13 +8,14 @@ import Swal from "sweetalert2";
 
 
 const ReviewDetails = () => {
+
     const { user } = useContext(authContext);
     const review = useLoaderData();
     const { _id, coverImage, gameDescription, gameRating, gameTitle, genre, year, reviewerName, reviewerEmail } = review;
 
 
     const handleWatchList = () => {
-        fetch('http://localhost:5000/watchlist', {
+        fetch('https://game-echo-server.vercel.app/watchlist', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

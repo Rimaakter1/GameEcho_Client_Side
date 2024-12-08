@@ -4,8 +4,8 @@ import { IoLogoYoutube } from 'react-icons/io';
 
 const Footer = () => {
     return (
-        <footer className='bg-[#131925]'>
-            <div className="flex flex-col lg:flex-row  justify-around text-white py-10 px-8 lg:px-0 gap-10">
+        <footer className='dark:bg-[#111827]'>
+            <div className="flex flex-col lg:flex-row  justify-around dark:text-white py-10 px-8 lg:px-0 gap-10">
                 <aside className='space-y-5'>
                     <img className='w-28' src={logo} alt="" />
                     <p className='text-lg font-Parkinsans'>
@@ -33,7 +33,7 @@ const Footer = () => {
                     <a className="link link-hover">Legal Notice</a>
                 </nav>
             </div>
-            <aside className='text-white bg-[#192130] text-center py-8'>
+            <aside className='dark:text-white text-center py-8'>
                 <p>Copyright © {new Date().getFullYear()} - All right reserved by Rima Akter</p>
             </aside>
         </footer>

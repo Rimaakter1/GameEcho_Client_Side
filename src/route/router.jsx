@@ -21,12 +21,12 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/topRatedReviews')
+                loader: () => fetch('https://game-echo-server.vercel.app/topRatedReviews')
             },
             {
                 path: "reviews",
                 element: <AllReviews></AllReviews>,
-                loader: () => fetch('http://localhost:5000/reviews')
+                loader: () => fetch('https://game-echo-server.vercel.app/reviews')
             },
             {
                 path: "addReview",
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <MyReviews></MyReviews>
                 </PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/reviews')
+                loader: () => fetch('https://game-echo-server.vercel.app/reviews')
             },
             {
                 path: "myWatchlist",
@@ -58,12 +58,12 @@ const router = createBrowserRouter([
             {
                 path: "review/:id",
                 element: <ReviewDetails></ReviewDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/review/${params.id}`)
+                loader: ({ params }) => fetch(`https://game-echo-server.vercel.app/review/${params.id}`)
             },
             {
                 path: "updateReview/:id",
                 element: <UpdateReview></UpdateReview>,
-                loader: ({ params }) => fetch(`http://localhost:5000/review/${params.id}`)
+                loader: ({ params }) => fetch(`https://game-echo-server.vercel.app/review/${params.id}`)
             }
 
 

@@ -6,7 +6,7 @@ import HomeBanner from "../components/HomeBanner/HomeBanner";
 
 const Home = () => {
     const topRatedReviews = useLoaderData();
-    console.log(topRatedReviews);
+
     return (
         <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
             <HomeBanner></HomeBanner>
