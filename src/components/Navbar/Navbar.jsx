@@ -52,7 +52,7 @@ const Navbar = () => {
                     {user ? (
                         <div className="flex items-center gap-2 justify-center py-4 lg:py-0">
                             <div className="bg-white p-2 rounded-full">
-                                <img data-tooltip-id="my-tooltip-1" className="md:w-6 w-8" src={user.photoURL} alt="User" />
+                                <img data-tooltip-id="my-tooltip-1" className="w-8 rounded-full" src={user.photoURL} alt="User" />
                             </div>
                             <button
                                 onClick={handleLogout}
@@ -93,7 +93,7 @@ const Navbar = () => {
                 id="my-tooltip-1"
                 place="Top"
                 content={user?.displayName}
-                style={{ backgroundColor: "#FFFFFF", color: "#222", padding: "10px", fontWeight: 800 }}
+                style={{ backgroundColor: "#FFFFFF", color: "#222", padding: "15px", fontWeight: 800 }}
             />
         </div>
     );

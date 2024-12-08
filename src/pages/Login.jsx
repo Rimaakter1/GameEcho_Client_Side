@@ -11,17 +11,29 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const googleLogin = () => {
-        handleGoogleLogin();
-        navigate('/');
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Logged in successfully with Google!",
-            showConfirmButton: false,
-            timer: 1500
-        });
+    const googleLogin = async () => {
+        try {
+            const result = await handleGoogleLogin();
+            if (result) {
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Logged in successfully with Google!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        } catch (error) {
+            Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "Failed to login with Google!",
+                text: error.message || "Please try again.",
+                showConfirmButton: true
+            });
+        }
     };
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
