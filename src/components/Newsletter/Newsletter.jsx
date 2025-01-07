@@ -30,7 +30,7 @@ const Newsletter = () => {
                     </button>
                 </div>
 
-                <div className="mt-6 text-sm text-gray-200">
+                <div className="mt-6 text-gray-200">
                     <p>We respect your privacy. No spam, just the best gaming news!</p>
                 </div>
             </div>

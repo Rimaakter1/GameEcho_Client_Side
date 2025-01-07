@@ -75,7 +75,7 @@ const AllReviews = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-5 w-11/12 mx-auto md:grid-cols-2 lg:grid-cols-3 pb-24">
+            <div className="grid grid-cols-1 gap-5 w-11/12 mx-auto md:grid-cols-2 lg:grid-cols-4 pb-24">
                 {filteredReviews.length > 0 &&
                     filteredReviews.map((review) => (
                         <ReviewsCard key={review._id} review={review}></ReviewsCard>

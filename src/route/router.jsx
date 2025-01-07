@@ -11,6 +11,8 @@ import ReviewDetails from "../pages/ReviewDetails";
 import PrivateRoute from "./PrivateRoute";
 import UpdateReview from "../pages/UpdateReview";
 import Page404 from "../pages/Page404";
+import Contact from "../pages/Contact";
+import Support from "../pages/Support";
 
 const router = createBrowserRouter([
     {
@@ -64,6 +66,15 @@ const router = createBrowserRouter([
                 path: "updateReview/:id",
                 element: <UpdateReview></UpdateReview>,
                 loader: ({ params }) => fetch(`https://game-echo-server.vercel.app/review/${params.id}`)
+            },
+            {
+                path: "contact",
+                element: <Contact></Contact>
+
+            },
+            {
+                path: "support",
+                element: <Support></Support>
             }
 
 

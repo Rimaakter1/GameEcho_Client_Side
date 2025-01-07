@@ -11,7 +11,7 @@ const ReviewDetails = () => {
 
     const { user } = useContext(authContext);
     const review = useLoaderData();
-    const { coverImage, gameDescription, gameRating, gameTitle, genre, reviewerName, reviewerEmail } = review;
+    const { coverImage, gameDescription, gameRating, gameTitle, genre, reviewerName, reviewerEmail, year } = review;
 
 
     const handleWatchList = () => {
@@ -51,6 +51,7 @@ const ReviewDetails = () => {
                 <div className="card-body w-1/2">
                     <h2 className="card-title text-xl font-bold">{gameTitle}</h2>
                     <p className="text-sm text-gray-500 mb-2">Genre: {genre}</p>
+                    <p className="text-sm text-gray-500 mb-2">Published Year: {year}</p>
                     <p className="text-gray-700">{gameDescription}</p>
                     <div className="rating mt-2">
                         <span className="ml-1 font-medium">
