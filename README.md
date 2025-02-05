@@ -1,6 +1,6 @@
 # 🎮 GameEcho: A Game Review Application (Client Repository)
 
-![Project Screenshot](https://via.placeholder.com/1200x600?text=Project+Screenshot)
+![Project Screenshot](https://i.ibb.co.com/tw676Yv6/Screenshot-2025-02-05-195452.png)
 
 ## 📖 Table of Contents
 1. [📜 Project Overview](#-project-overview)
@@ -73,6 +73,27 @@ Add reviews, manage a personalized watchlist, and more, all with a real-time dat
   "react-tooltip": "^5.28.0",
   "sweetalert2": "^11.14.5"
 }
+```
+## 🛠️ Installation Guide
+To set up and run this project locally, follow these steps:
+
+### **1️⃣ Clone the Repository**
+```
+git clone <repository-url>
+cd bhaloKaj-client
+```
+### **2️⃣ Install Dependencies**
+```
+npm install
+```
+### **3️⃣ Run the Development Server**
+```
+npm start
+```
+## 🔧 Development
+To build the project for production:
+```
+npm run build
 ```
 
 
