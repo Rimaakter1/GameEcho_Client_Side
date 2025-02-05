@@ -9,8 +9,7 @@
 4. [🛠️ Technologies Used](#-technologies-used)
 5. [🔥 Core Features](#-core-features)
 6. [🛠️ Installation Guide](#-installation-guide)
-7. [🚀 Usage Instructions](#-usage-instructions)
-8. [📚 Additional Resources](#-additional-resources)
+
 
 ---
 
